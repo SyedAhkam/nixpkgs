@@ -44,9 +44,7 @@ in stdenv.mkDerivation rec {
     tar -xvf data.tar.xz
   '';
 
-  nativeBuildInputs = [ patchelf makeWrapper ];
-
-  dontWrapQtApps = true;
+  nativeBuildInputs = [ patchelf makeWrapper qt5.wrapQtAppsHook ];
 
   buildInputs = [
     stdenv.cc.cc stdenv.cc.libc zlib libX11 libXt libXext libSM libICE libxcb libxkbcommon libxshmfence
